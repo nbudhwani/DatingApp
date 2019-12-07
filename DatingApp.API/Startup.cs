@@ -31,6 +31,8 @@ namespace DatingApp.API
             services.AddControllers();
             // order doesn't matter here
             services.AddCors();
+            // scope is per http request. will be available for injection in controllers
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
